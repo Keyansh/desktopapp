@@ -1,4 +1,3 @@
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script type="text/javascript">
     var DWS_BASE_URL = '<?php echo base_url(); ?>';
 </script>
@@ -15,7 +14,6 @@ $mainColor = json_decode($siteColor['config_json']);
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <?php
@@ -38,7 +36,7 @@ $DWS_MIN_CSS_ARR[] = 'css/styleForm.css';
 // $DWS_MIN_CSS_ARR[] = 'css/responsive.css';
 // $DWS_MIN_CSS_ARR[] = 'css/responsive1.css';
 
-// $DWS_MIN_JS_ARR[] = 'js/jquery.js';
+$DWS_MIN_JS_ARR[] = 'js/jquery.js';
 // $DWS_MIN_JS_ARR[] = 'js/bootstrap.js';
 // $DWS_MIN_JS_ARR[] = 'js/bootstrap-clockpicker.min.js';
 // $DWS_MIN_JS_ARR[] = 'js/jqueryuiblock.js';

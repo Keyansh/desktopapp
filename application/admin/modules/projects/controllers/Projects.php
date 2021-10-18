@@ -59,20 +59,11 @@ class Projects extends Admin_Controller
         $this->load->helper('text');
         $this->load->library('form_validation');
 
-        //Setup pagination
-        // $perpage = 25;
-        // $config['base_url'] = base_url() . "project/project/index/";
-        // $config['uri_segment'] = 4;
-        // $config['total_rows'] = $this->Projectsmodel->countAll();
-        // $config['per_page'] = $perpage;
-        // $this->pagination->initialize($config);
+
 
         //Fetch News
         $projects = array();
-        // $projects = $this->Projectsmodel->listAll($offset, $perpage);
         $projects = $this->Projectsmodel->listAll();
-        //print_r($categories); exit();
-        //render view
         $inner = array();
         $inner['projects'] = $projects;
         $inner['pagination'] = $this->pagination->create_links();
@@ -92,12 +83,6 @@ class Projects extends Admin_Controller
 
         //validation check
         $this->form_validation->set_rules('title', 'Title', 'trim|required');
-        $this->form_validation->set_rules('url_alias', 'URL Alias', 'trim');
-        $this->form_validation->set_rules('contents', 'Full Description', 'trim');
-        $this->form_validation->set_rules('projects_image', 'Listing Page image', 'trim|required');
-        // $this->form_validation->set_rules('architect', 'Architect', 'trim|required');
-        // $this->form_validation->set_rules('contractor', 'Contractor', 'trim|required');
-        // $this->form_validation->set_rules('short_contents', 'Short Description', 'trim');
         $this->form_validation->set_rules('project_cat', 'Project Type', 'trim|required');
 
         $this->form_validation->set_error_delimiters('<li>', '</li>');
@@ -149,12 +134,6 @@ class Projects extends Admin_Controller
 
         //validation check
         $this->form_validation->set_rules('title', 'Title', 'trim|required');
-        $this->form_validation->set_rules('url_alias', 'URL Alias', 'trim');
-        $this->form_validation->set_rules('contents', 'Full Description', 'trim');
-        $this->form_validation->set_rules('projects_image', 'Listing Page image', 'trim|required');
-        // $this->form_validation->set_rules('architect', 'Architect', 'trim|required');
-        // $this->form_validation->set_rules('contractor', 'Contractor', 'trim|required');
-        // $this->form_validation->set_rules('short_contents', 'Short Description', 'trim');
         $this->form_validation->set_rules('project_cat', 'Project Type', 'trim|required');
 
         $this->form_validation->set_error_delimiters('<li>', '</li>');

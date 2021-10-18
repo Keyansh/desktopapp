@@ -896,14 +896,34 @@ class Cms extends Cms_Controller
         $this->db->where('project_cat', $_POST['id']);
         $rs = $this->db->get('projects');
         $data = $rs->result_array();
-        $result['html'] = '<p>hi</p>';
+        $result['html'] = '<p>No Data</p>';
         if ($data) {
             $html = '';
             foreach ($data as $item) {
-                $html .= '<li class="list-items">' . $item['projects_title'] . '</li>';
+                $html .= '<li class="list-items" data-id='. $item['projects_id'] .'>' . $item['projects_title'] . '</li>';
             }
             $result['html'] = $html;
         }
+        echo json_encode($result);
+    }
+    public function projectData()
+    {
+        $this->db->where('projects_id', $_POST['id']);
+        $rs = $this->db->get('projects');
+        $data = $rs->row_array();
+        $html = '';
+      $html .=  '<tr>';
+      $html .= ' <td class="dynamic">1</td>';
+      $html .=  '<td><input type="text" name="name" value="'. $data["projects_title"] .'"></td>';
+      $html .=  ' <td><input type="text" name="qty" value ="1"></td>';
+      $html .=  ' <td><input type="text" placeholder="MRP"></td>';
+      $html .=  '<td><input type="text" placeholder="MRP"></td>';
+      $html .=  '<td><button type="button">+</button></td>';
+      $html .=  '<td><button type="button">-</button></td>';
+      $html .=  '<td><span class="recyclebin"><i class="fas fa-trash-alt"></i></span></td>';
+      $html .=  ' </tr>';
+
+        $result['html'] = $html;
         echo json_encode($result);
     }
 }

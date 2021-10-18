@@ -5,7 +5,8 @@ body {
 
 .form-content {
     background-color: #d5d5d5;
-    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .form-table {
@@ -30,8 +31,9 @@ body {
 }
 
 .form-row2 .list .list-items {
-    padding-bottom: 10px;
-    font-weight: 500;
+	padding-bottom: 10px;
+	font-weight: 500;
+	cursor: pointer;
 }
 
 .form-row3 {
@@ -72,7 +74,7 @@ body {
 
 .list {
     padding-left: 20px;
-    padding-top: 20px;
+    padding-top: 0px;
 }
 
 .list .list-items {
@@ -82,4 +84,11 @@ body {
 .form-row2,
 .form-row3 {
     border-left: 1px solid #b5b5b5;
+}
+
+.items {
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 21px;
+    text-align: center;
 }

@@ -1,1 +1,0 @@
-<?= DWS_TAG_BEFORE_HEAD_CLOSE; ?>

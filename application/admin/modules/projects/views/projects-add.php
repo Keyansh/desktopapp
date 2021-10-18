@@ -79,7 +79,7 @@
                                 <input name="title" type="text" class="form-control" id="title" value="<?php echo set_value('title'); ?>" size="40">
                             </div>
                         </div>
-                        <!-- <div class="form-group clearfix">
+                        <div class="form-group clearfix">
                             <label class="col-sm-2 control-label">Architect <span class="error">*</span></label>
                             <div class="col-sm-6">
                                 <input name="architect" type="text" class="form-control" id="architect" value="<?php echo set_value('architect'); ?>" size="40">
@@ -90,14 +90,14 @@
                             <div class="col-sm-6">
                                 <input name="contractor" type="text" class="form-control" id="contractor" value="<?php echo set_value('contractor'); ?>" size="40">
                             </div>
-                        </div> -->
-                        <div class="form-group clearfix">
+                        </div>
+                        <!-- <div class="form-group clearfix">
                             <label class="col-sm-2 control-label">URI</label>
                             <div class="col-sm-6">
                                 <input name="url_alias" type="text" class="form-control" id="url_alias" value="<?php echo set_value('url_alias'); ?>" size="40">
                                 &nbsp;(Will be auto-generated if left blank)
                             </div>
-                        </div>
+                        </div> -->
                         <div class="form-group clearfix">
                             <label class="col-sm-2 control-label">Project Type</label>
                             <div class="col-sm-6">
