@@ -76,7 +76,24 @@
                 },
                 success: function(data) {
                     const obj = JSON.parse(data);
-                    console.log(obj);
+                    $('.item-list-display').html('');
+                    $('.item-list-display').html(obj['html']);
+
+                }
+            });
+        });
+        $(document).on('click', '.submit-sub-cat', function(e) {
+            e.preventDefault();
+            var id = $(this).attr('data-id');
+            console.log(id);
+            $.ajax({
+                url: "cms/projects",
+                type: 'POST',
+                data: {
+                    id: id,
+                },
+                success: function(data) {
+                    const obj = JSON.parse(data);
                     $('.item-list-display').html('');
                     $('.item-list-display').html(obj['html']);
 
