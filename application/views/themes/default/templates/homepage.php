@@ -104,3 +104,145 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Save form Data in a Text File using JavaScript</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        div {
+            padding: 10px;
+            background-color: #f6f6f6;
+            overflow: hidden;
+        }
+
+        input[type=text],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type=button] {
+            width: auto;
+            float: right;
+            cursor: pointer;
+            padding: 7px;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div>
+        <form>
+            <!--Add few elements to the form-->
+
+            <div>
+                <input type="text" name="txtName" id="txtName" placeholder="Enter your name" />
+            </div>
+            <div>
+                <input type="text" name="txtAge" id="txtAge" placeholder="Enter your age" />
+            </div>
+            <div>
+                <input type="text" name="txtEmail" id="txtEmail" placeholder="Enter your email address" />
+            </div>
+            <div>
+                <select id="selCountry" name="selCountry">
+                    <option selected value="">-- Choose the country --</option>
+                    <option value="India">India</option>
+                    <option value="Japan">Japan</option>
+                    <option value="USA">USA</option>
+                </select>
+            </div>
+            <div>
+                <textarea id="msg" name="msg" placeholder="Write some message ..." style="height:100px"></textarea>
+            </div>
+
+            <!--Add to button to save the data.-->
+            <div>
+                <input type="button" id="bt" value="Save data to file" onclick="download_csv()" />
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+    let saveFile = () => {
+        var formData = $('form').serializeArray();
+        console.log(formData);
+        // Get the data from each element on the form.
+        const name = document.getElementById('txtName');
+        const age = document.getElementById('txtAge');
+        const email = document.getElementById('txtEmail');
+        const country = document.getElementById('selCountry');
+        const msg = document.getElementById('msg');
+
+        // This variable stores all the data.
+        let data =
+            '\r Name: ' + name.value + ' \r\n ' +
+            'Age: ' + age.value + ' \r\n ' +
+            'Email: ' + email.value + ' \r\n ' +
+            'Country: ' + country.value + ' \r\n ' +
+            'Message: ' + msg.value;
+
+        // Convert the text to BLOB.
+        const textToBLOB = new Blob([formData], {
+            type: 'text/csv'
+        });
+        const sFileName = 'formData.csv'; // The file to save the data.
+
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
+
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        } else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+
+        newLink.click();
+    }
+</script>
+
+<script>
+    function download_csv() {
+
+        var formData = $('form').serialize();
+        var formArr = formData.split("&");
+        var csvValue = [];
+        var csvHeader = [];
+
+        formArr.forEach(function(row) {
+            var formArrInner = row.split("=");
+            csvHeader.push(formArrInner['0']);
+            csvValue.push(formArrInner['1']);
+        });
+        console.log(csvHeader);
+        var csv = csvHeader + '\n';
+        csv += csvValue + '\n';
+        var hiddenElement = document.createElement('a');
+        hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+        hiddenElement.target = '_blank';
+        hiddenElement.download = 'people.csv';
+        hiddenElement.click();
+    }
+</script>
+
+
+</html>
