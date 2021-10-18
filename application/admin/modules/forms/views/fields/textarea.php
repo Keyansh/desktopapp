@@ -1,0 +1,1 @@
+<textarea name="<?php echo $field_data['name']; ?>" placeholder="<?php echo $field_data['placeholder']; ?>" id="" cols="30" rows="10" class="form-control"></textarea>

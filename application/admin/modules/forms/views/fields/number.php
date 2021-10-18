@@ -1,0 +1,1 @@
+<input class="form-control" type="number" name="<?php echo $field_data['name']; ?>" placeholder="<?php echo $field_data['placeholder']; ?>">

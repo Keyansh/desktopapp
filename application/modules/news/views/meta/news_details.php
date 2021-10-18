@@ -1,0 +1,1 @@
+<title><?php echo $news['news_title'];?> -  News</title>

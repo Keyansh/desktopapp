@@ -1,0 +1,1 @@
+<title>Manage - Case Studies</title>

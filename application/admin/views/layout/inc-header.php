@@ -1,0 +1,1 @@
+<a href="<?php echo base_url();?>user/dashboard"><img src="images/logo.png" class="logo" alt="" border="0" /></a>

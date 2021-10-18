@@ -1,0 +1,85 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+.form-content {
+    background-color: #d5d5d5;
+    margin-top: 50px;
+}
+
+.form-table {
+    margin-top: 20px;
+}
+
+.form-table tr td input[type="text"] {
+    width: 100%;
+    padding: 2px 7px;
+}
+
+.form-table tr td input::placeholder {
+    /* color:rgb(122, 122, 122); */
+    color: black;
+    font-size: 15px;
+}
+
+.form-table td {
+    border: none;
+    padding: 7px;
+    vertical-align: middle;
+}
+
+.form-row2 .list .list-items {
+    padding-bottom: 10px;
+    font-weight: 500;
+}
+
+.form-row3 {
+    padding-top: 26px;
+}
+
+.form-row3 .btn1 {
+    padding-bottom: 13px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.form-row3 .btn1 button[type="button"] {
+    padding: 5px 15px;
+    width: 100%;
+    background-color: #04aa6d;
+    border: none;
+}
+
+.form-table thead tr th {
+    font-size: 18px;
+    border: none;
+    padding: 0 7px;
+    white-space: nowrap;
+}
+
+.form-table tbody tr td button[type="button"] {
+    padding: 0 10px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #04aa6d;
+    border: 1px solid #04aa6d;
+}
+
+.recyclebin .fas {
+    font-size: 18px;
+}
+
+.list {
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.list .list-items {
+    font-size: 18px;
+}
+
+.form-row2,
+.form-row3 {
+    border-left: 1px solid #b5b5b5;
+}

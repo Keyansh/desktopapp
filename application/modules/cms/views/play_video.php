@@ -1,0 +1,1 @@
+<iframe src="http://player.vimeo.com/video/<?php echo $vid;?>?api=1&player_id=vimeo_player_1&autoplay=1" id="vimeo_player_1" width="730" height="410" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>

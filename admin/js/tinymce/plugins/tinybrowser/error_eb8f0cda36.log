@@ -1,0 +1,2 @@
+2015-04-29 09:10:35 (BST)	2 Warning	fopen(/var/www/vhosts/checksample.co.uk/top/httpdocs/upload/useruploads/files/.htaccess): failed to open stream: Permission denied	File: tinybrowser.php	Line: 34	
+2015-04-29 09:10:45 (BST)	2 Warning	fopen(/var/www/vhosts/checksample.co.uk/top/httpdocs/upload/useruploads/files/.htaccess): failed to open stream: Permission denied	File: tinybrowser.php	Line: 34	

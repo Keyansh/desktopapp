@@ -1,0 +1,1 @@
+<input class="form-control" type="text" name="<?php echo $field_data['element'].'['.$field['name'].']' ?>" value="<?php echo isset($field_value[$field['name']]) && $field_value[$field['name']] ? $field_value[$field['name']] : ''; ?>">

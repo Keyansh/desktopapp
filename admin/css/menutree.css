@@ -1,0 +1,52 @@
+#dialog-modal{
+	display: none;
+}
+#menutree {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+	display: block;
+}
+ul { min-height:10px; }
+#menutree a {
+    color: #000;
+    text-decoration: none;
+}
+#menutree li {
+	list-style: none;
+	padding: 3px;
+	padding-left: 15px;
+	margin: 0px;
+	display: block;
+	clear: both;
+	overflow: hidden;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#menutree li {
+	background: #E0E0E0;
+}
+#menutree li li {
+	background: #EEEEEE;
+}
+#menutree li li li {
+	background: #F8F8F8;
+}
+#menutree li li li li {
+	background-color: #fff;
+}
+#menutree .menu_item {
+	clear: both;
+	min-height: 18px;
+}
+#menutree .menu_item_name {
+	float: left;
+}
+#menutree .video_checkbox {
+	float: right;
+
+}
+
+#menutree .menu_item_options {
+	float: right;
+}

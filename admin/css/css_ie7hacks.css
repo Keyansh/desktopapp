@@ -1,0 +1,14 @@
+h2{
+	font-size: 18px;
+}
+
+form fieldset{
+	border: 0px;
+	background: #f7f8ff;
+	padding: 8px;
+}
+
+hr{
+	margin: 0px;
+	padding: 0;
+}

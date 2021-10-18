@@ -1,0 +1,7 @@
+<?php
+if( DWS_ALLOW_INDEX == 1){
+    echo '<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">';
+}else{
+    echo '<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+}
+?>

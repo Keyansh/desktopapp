@@ -1,0 +1,187 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+
+
+/* 
+    Created on : Oct 12, 2018, 09:30:20 PM
+    Author     : BALWINDER
+*/
+
+body {
+    background: #f7f7f7;
+    background-repeat: repeat;
+    background-repeat: repeat;
+    font-family: 'Roboto', sans-serif;
+}
+
+body::after {
+    background-image: url('../images/log-in.png');
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background-color: #263388;
+    background-size: 100% 100%;
+}
+
+.img-logo-img {
+    animation: spin 3s linear 0s infinite reverse;
+    animation-play-state: paused;
+}
+
+.logo {
+    margin-left: 15px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(-360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+* {
+    margin: 0
+}
+
+.captcha-image {
+    height: 34px;
+}
+
+.captcha-image img {
+    height: 100% !important;
+    width: 100% !important;
+}
+
+.username-label {
+    display: block;
+    text-align: center;
+    font-size: 23px;
+    color: #282828;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+}
+
+.back-ground-col {
+    background: white;
+    border-radius: 0px;
+}
+
+.pageTop {
+    margin-bottom: 0px;
+    color: #fff;
+    font-family: calibri;
+    position: relative;
+    text-align: center;
+    padding: 20px 0px;
+    background: #fff;
+    margin: auto;
+    overflow: hidden;
+}
+
+.pageTop img {
+    max-width: 224px;
+    margin: 0 auto;
+}
+
+.pageTop::after {
+    content: "";
+    display: table;
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    width: 300px;
+    background: #c8c8ca;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#page {
+    max-width: 370px;
+    margin: auto;
+    width: 100%;
+    border: none;
+    /* box-shadow: 0 5px 10px #dfdfdf; */
+}
+
+#page .pageContent {
+    padding: 30px 30px 15px;
+}
+
+.retr>a {
+    color: gray;
+    text-decoration: underline;
+    font-size: 13px;
+}
+
+#username {
+    margin-bottom: 23px;
+}
+
+.retr {
+    margin: -5px 0 0;
+    text-align: right;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.outer-wrapper {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.inner-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 15px;
+}
+
+.manualcss {
+    height: 34px;
+    font-size: 15px;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.btn-primary {
+    background: #495d80;
+    border-color: #495d80;
+    border-radius: 0;
+    font-size: 18px;
+}
+
+.pad-left0 {
+    padding-left: 0;
+}
+
+.pad-right0 {
+    padding-right: 0;
+}
+
+.btn.btn-primary.btn-block.pull-right.btn-log-in {
+    background: #263388;
+    height: 34px;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+}
+
+.pageTop img.img-logo-img.admin-logo {
+    display: none;
+}
+
+.form-group.col-xs-12>div {
+    padding: 0;
+}

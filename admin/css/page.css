@@ -1,0 +1,28 @@
+#pagetree {
+	float: left;
+	width: 200px;
+	overflow: hidden;
+}
+#menutree {
+	float: left;
+	width: 300px;
+}
+#cms {
+	padding-left: 210px;
+}
+#tabs form{
+	border: 0px solid #b5ceee;
+	background: #FFF;
+	padding: 0px;
+	margin-bottom: 15px;
+}
+#cmss {
+	padding-right: 100px;
+}
+#block_template {
+	position: relative;
+	height: auto;
+}
+#non-config-products-select{
+	width: 210px;
+}

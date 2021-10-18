@@ -1,0 +1,60 @@
+#dialog-modal{
+	display: none;
+}
+#left_box {
+	float: left;
+	width: 45%;
+	
+}
+#right_box {
+	float: right;
+	width: 45%;
+}
+
+#left_box li {
+	width: 80%;
+	height: 30px;
+	list-style: none;
+	padding: 5px;
+	padding-left: 15px;
+	margin: 0px;
+	display: block;
+	clear: both;
+	overflow: hidden;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#left_box li {
+	background: #E0E0E0;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+	padding-right: 10px;
+}
+
+#right_box li {
+	width: 80%;
+	height: 30px;
+	list-style: none;
+	padding: 3px;
+	padding-left: 15px;
+	margin: 0px;
+	display: block;
+	clear: both;
+	overflow: hidden;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#right_box li {
+	background: #E0E0E0;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+	padding-right: 10px;
+}
+
+.connectedSortable{
+	min-height: 40px;
+}

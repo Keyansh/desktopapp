@@ -1,0 +1,1 @@
+<?= DWS_TAG_BEFORE_BODY_CLOSE; ?>

@@ -1,0 +1,73 @@
+/*
+ * jsTree default theme 1.0
+ * Supported features: dots/no-dots, icons/no-icons, focused, loading
+ * Supported plugins: ui (hovered, clicked), checkbox, contextmenu, search
+ */
+
+.jstree-tge li, 
+.jstree-tge ins { background-image:url("d.png"); background-repeat:no-repeat; background-color:transparent; }
+.jstree-tge li { background-position:-90px 0; background-repeat:repeat-y; }
+.jstree-tge li.jstree-last { background:transparent; }
+.jstree-tge .jstree-open > ins { background-position:-72px 0; }
+.jstree-tge .jstree-closed > ins { background-position:-54px 0; }
+.jstree-tge .jstree-leaf > ins { background-position:-36px 0; }
+
+.jstree-tge .jstree-hovered { background:#e7f4f9; border:1px solid #d8f0fa; padding:0 2px 0 1px; }
+.jstree-tge .jstree-clicked { background:#beebff; border:1px solid #99defd; padding:0 2px 0 1px; }
+.jstree-tge a .jstree-icon { background-position:-56px -19px; }
+.jstree-tge a.jstree-loading .jstree-icon { background:url("throbber.gif") center center no-repeat !important; }
+
+.jstree-tge.jstree-focused { background:#ffffee; }
+
+.jstree-tge .jstree-no-dots li, 
+.jstree-tge .jstree-no-dots .jstree-leaf > ins { background:transparent; }
+.jstree-tge .jstree-no-dots .jstree-open > ins { background-position:-18px 0; }
+.jstree-tge .jstree-no-dots .jstree-closed > ins { background-position:0 0; }
+
+.jstree-tge .jstree-no-icons a .jstree-icon { display:none; }
+
+.jstree-tge .jstree-search { font-style:italic; }
+
+.jstree-tge .jstree-no-icons .jstree-checkbox { display:inline-block; }
+.jstree-tge .jstree-no-checkboxes .jstree-checkbox { display:none !important; }
+.jstree-tge .jstree-checked > a > .jstree-checkbox { background-position:-38px -19px; }
+.jstree-tge .jstree-unchecked > a > .jstree-checkbox { background-position:-2px -19px; }
+.jstree-tge .jstree-undetermined > a > .jstree-checkbox { background-position:-20px -19px; }
+.jstree-tge .jstree-checked > a > .jstree-checkbox:hover { background-position:-38px -37px; }
+.jstree-tge .jstree-unchecked > a > .jstree-checkbox:hover { background-position:-2px -37px; }
+.jstree-tge .jstree-undetermined > a > .jstree-checkbox:hover { background-position:-20px -37px; }
+
+#vakata-dragged.jstree-tge ins { background:transparent !important; }
+#vakata-dragged.jstree-tge .jstree-ok { background:url("d.png") -2px -53px no-repeat !important; }
+#vakata-dragged.jstree-tge .jstree-invalid { background:url("d.png") -18px -53px no-repeat !important; }
+#jstree-marker.jstree-tge { background:url("d.png") -41px -57px no-repeat !important; }
+
+.jstree-tge a.jstree-search { color:aqua; }
+
+#vakata-contextmenu.jstree-tge-context, 
+#vakata-contextmenu.jstree-tge-context li ul { background:#f0f0f0; border:1px solid #979797; -moz-box-shadow: 1px 1px 2px #999; -webkit-box-shadow: 1px 1px 2px #999; box-shadow: 1px 1px 2px #999; }
+#vakata-contextmenu.jstree-tge-context li { }
+#vakata-contextmenu.jstree-tge-context a { color:black; }
+#vakata-contextmenu.jstree-tge-context a:hover, 
+#vakata-contextmenu.jstree-tge-context .vakata-hover > a { padding:0 5px; background:#e8eff7; border:1px solid #aecff7; color:black; -moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px; }
+#vakata-contextmenu.jstree-tge-context li.jstree-contextmenu-disabled a, 
+#vakata-contextmenu.jstree-tge-context li.jstree-contextmenu-disabled a:hover { color:silver; background:transparent; border:0; padding:1px 4px; }
+#vakata-contextmenu.jstree-tge-context li.vakata-separator { background:white; border-top:1px solid #e0e0e0; margin:0; }
+#vakata-contextmenu.jstree-tge-context li ul { margin-left:-4px; }
+
+/* IE6 BEGIN */
+.jstree-tge li, 
+.jstree-tge ins,
+#vakata-dragged.jstree-tge .jstree-invalid, 
+#vakata-dragged.jstree-tge .jstree-ok, 
+#jstree-marker.jstree-tge { _background-image:url("d.gif"); }
+.jstree-tge .jstree-open ins { _background-position:-72px 0; }
+.jstree-tge .jstree-closed ins { _background-position:-54px 0; }
+.jstree-tge .jstree-leaf ins { _background-position:-36px 0; }
+.jstree-tge a ins.jstree-icon { _background-position:-56px -19px; }
+#vakata-contextmenu.jstree-tge-context ins { _display:none; }
+#vakata-contextmenu.jstree-tge-context li { _zoom:1; }
+.jstree-tge .jstree-undetermined a .jstree-checkbox { _background-position:-20px -19px; }
+.jstree-tge .jstree-checked a .jstree-checkbox { _background-position:-38px -19px; }
+.jstree-tge .jstree-unchecked a .jstree-checkbox { _background-position:-2px -19px; }
+/* IE6 END */

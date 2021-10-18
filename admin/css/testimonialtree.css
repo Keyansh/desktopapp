@@ -1,0 +1,47 @@
+#dialog-modal{
+	display: none;
+}
+#testimonialtree {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+	display: block;
+}
+ul { min-height:10px; }
+#testimonialtree a {
+    color: #000;
+    text-decoration: none;
+}
+#testimonialtree li {
+	list-style: none;
+	padding: 3px;
+	padding-left: 15px;
+	margin: 0px;
+	display: block;
+	clear: both;
+	overflow: hidden;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#testimonialtree li {
+	background: #E0E0E0;
+}
+#testimonialtree li li {
+	background: #EEEEEE;
+}
+#testimonialtree li li li {
+	background: #F8F8F8;
+}
+#testimonialtree li li li li {
+	background-color: #fff;
+}
+#testimonialtree .menu_item {
+	clear: both;
+	min-height: 18px;
+}
+#testimonialtree .menu_item_name {
+	float: left;
+}
+#testimonialtree .menu_item_options {
+	float: right;
+}

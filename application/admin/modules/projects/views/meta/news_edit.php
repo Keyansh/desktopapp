@@ -1,0 +1,1 @@
+<title>Admin - Update News</title>
