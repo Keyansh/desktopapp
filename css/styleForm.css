@@ -1,13 +1,15 @@
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
+    background-color: #f7f5f6;
 }
 
 .form-content {
-    background-color: #f7f5f6;
     display: flex;
     flex-wrap: wrap;
     -webkit-box-shadow: -1px 3px 14px -1px rgba(0, 0, 0, 0.15);
+    background: white;
+    border-radius: 10px;
 }
 
 .form-table {
@@ -20,7 +22,6 @@ body {
 }
 
 .form-table tr td input::placeholder {
-    /* color:rgb(122, 122, 122); */
     color: black;
     font-size: 15px;
 }
@@ -47,6 +48,7 @@ body {
     font-weight: 500;
 }
 
+.btn-default-nk,
 .form-row3 .btn1 button {
     padding: 5px 15px;
     width: 100%;
@@ -58,10 +60,18 @@ body {
     border: 1px solid #2d4779;
 }
 
+.btn-default-nk:hover,
 .form-row3 .btn1 button.active,
 .form-row3 .btn1 button:hover {
     background-color: white;
     color: #2d4779;
+}
+
+.btn.btn-default-nk {
+    width: auto;
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
 }
 
 .form-table thead tr th {
@@ -77,6 +87,7 @@ body {
     font-weight: 700;
     background-color: #2d4779;
     border: 1px solid #2d4779;
+    color: white;
 }
 
 .recyclebin .fas {

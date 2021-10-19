@@ -45,7 +45,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <button type="submit" class="btn">submit</button>
+                        <button type="submit" class="btn btn-default-nk">submit</button>
                     </form>
                 </div>
                 <div class="col-6 col-md-2 form-row2">
