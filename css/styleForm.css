@@ -115,3 +115,10 @@ body {
     text-align: center;
     border-bottom: 1px solid #dfdfdf;
 }
+
+.date-input {
+    border: none;
+    font-size: 19px;
+    pointer-events: none;
+    margin-top: 20px;
+}

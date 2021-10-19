@@ -21,7 +21,7 @@ global $DWS_MIN_JS_ARR, $DWS_MIN_CSS_ARR, $DWS_JS_ARR, $DWS_CSS_ARR;
 
 $DWS_MIN_CSS_ARR[] = 'css/bootstrap.min.css';
 
-// $DWS_MIN_CSS_ARR[] = 'css/slider/owl.theme.default.css';
+// $DWS_MIN_CSS_ARR[] = 'css/slider/bootstrap-datepicker3.css';
 $DWS_MIN_CSS_ARR[] = 'css/styleForm.css';
 // $DWS_MIN_CSS_ARR[] = 'css/font-awesome.min.css';
 // $DWS_MIN_CSS_ARR[] = 'css/font-awesome.css';
@@ -37,6 +37,7 @@ $DWS_MIN_CSS_ARR[] = 'css/styleForm.css';
 // $DWS_MIN_CSS_ARR[] = 'css/responsive1.css';
 
 $DWS_MIN_JS_ARR[] = 'js/jquery.js';
+// $DWS_MIN_JS_ARR[] = 'js/bootstrap-datepicker.min.js';
 // $DWS_MIN_JS_ARR[] = 'js/bootstrap.js';
 // $DWS_MIN_JS_ARR[] = 'js/bootstrap-clockpicker.min.js';
 // $DWS_MIN_JS_ARR[] = 'js/jqueryuiblock.js';

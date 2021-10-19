@@ -26,6 +26,9 @@
     <section id="main-form">
         <div class="container-fluid">
             <div class="col-xs-12 form-content ">
+                <div class="col-xs-12">
+                    <input type="text" class="date-input" value="<?= date('d-m-Y') ?>" placeholder="">
+                </div>
                 <div class="col-xs-12 col-md-8 form-row1">
                     <form id="main-form">
                         <table class="table form-table">
