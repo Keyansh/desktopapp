@@ -15,34 +15,38 @@
     echo cms_js();
     $this->load->view('themes/' . THEME . '/layout/inc-before-head-close.php');
     ?>
-</head> 
+</head>
 <style>
     #main-form {
-	margin-top: 20px;
-}
+        margin-top: 20px;
+    }
 </style>
+
 <body>
     <section id="main-form">
         <div class="container-fluid">
             <div class="col-xs-12 form-content ">
                 <div class="col-xs-12 col-md-8 form-row1">
-                    <table class="table form-table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Sr. No.</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Qty</th>
-                                <th scope="col">MRP</th>
-                                <th scope="col">Discount</th>
-                                <th scope="col" colspan="3"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="first-row">
-                                <td colspan="7" style="text-align: center;color: red;">No item Selected</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <form id="main-form">
+                        <table class="table form-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Sr. No.</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Qty</th>
+                                    <th scope="col">MRP</th>
+                                    <th scope="col">Discount</th>
+                                    <th scope="col" colspan="3"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="first-row">
+                                    <td colspan="7" style="text-align: center;color: red;">No item Selected</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button type="submit" class="btn">submit</button>
+                    </form>
                 </div>
                 <div class="col-6 col-md-2 form-row2">
                     <p class="items">Items</p>
@@ -57,12 +61,11 @@
             </div>
         </div>
     </section>
-
     <script>
         $(document).on('click', '.submit-sub-cat', function(e) {
             e.preventDefault();
             var id = $(this).attr('data-id');
-            console.log(id);
+            var thisval = $(this);
             $.ajax({
                 url: "cms/projects",
                 type: 'POST',
@@ -71,17 +74,18 @@
                 },
                 success: function(data) {
                     const obj = JSON.parse(data);
+                    thisval.parents('.form-row3').find('.active').removeClass('active');
+                    thisval.addClass('active');
                     $('.item-list-display').html('');
                     $('.item-list-display').html(obj['html']);
 
                 }
             });
         });
-        
+
         $(document).on('click', '.list-items', function(e) {
             e.preventDefault();
             var id = $(this).attr('data-id');
-            console.log(id);
             $.ajax({
                 url: "cms/projectData",
                 type: 'POST',
@@ -92,9 +96,9 @@
                     const obj = JSON.parse(data);
                     $('.first-row').remove();
                     $('.form-table tbody').append(obj['html']);
-                    $('.dynamic').each(function(idx, elem){
-                        $(elem).text(idx+1);
-                    }); 
+                    $('.dynamic').each(function(idx, elem) {
+                        $(elem).text(idx + 1);
+                    });
                 }
             });
         });
@@ -103,20 +107,37 @@
             $(this).parents('tr').remove();
         });
 
+        $(document).on('submit', '#main-form', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var formData = $(this).serialize();
+            $.ajax({
+                url: "cms/csvExport",
+                type: 'POST',
+                data: formData,
+                success: function(data) {
 
+                }
+            });
+        });
 
-   
-  
-
-
+        $(document).on('click', '.cart-qty-plus', function(e) {
+            var $n = $(this)
+                .parents(".container-qty")
+                .find(".qty");
+            $n.val(Number($n.val()) + 1);
+        });
+        $(document).on('click', '.cart-qty-minus', function(e) {
+            var $n = $(this)
+                .parents(".container-qty")
+                .find(".qty");
+            var amount = Number($n.val());
+            if (amount > 1) {
+                $n.val(amount - 1);
+            }
+        });
     </script>
+
 </body>
 
 </html>
-
-
-
-
-
-
-

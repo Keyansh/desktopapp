@@ -900,7 +900,7 @@ class Cms extends Cms_Controller
         if ($data) {
             $html = '';
             foreach ($data as $item) {
-                $html .= '<li class="list-items" data-id='. $item['projects_id'] .'>' . $item['projects_title'] . '</li>';
+                $html .= '<li class="list-items" data-id=' . $item['projects_id'] . '>' . $item['projects_title'] . '</li>';
             }
             $result['html'] = $html;
         }
@@ -912,18 +912,48 @@ class Cms extends Cms_Controller
         $rs = $this->db->get('projects');
         $data = $rs->row_array();
         $html = '';
-      $html .=  '<tr>';
-      $html .= ' <td class="dynamic">1</td>';
-      $html .=  '<td><input type="text" name="name" value="'. $data["projects_title"] .'"></td>';
-      $html .=  ' <td><input type="text" name="qty" value ="1"></td>';
-      $html .=  ' <td><input type="text" placeholder="MRP"></td>';
-      $html .=  '<td><input type="text" placeholder="MRP"></td>';
-      $html .=  '<td><button type="button">+</button></td>';
-      $html .=  '<td><button type="button">-</button></td>';
-      $html .=  '<td><span class="recyclebin"><i class="fas fa-trash-alt"></i></span></td>';
-      $html .=  ' </tr>';
+        $html .=  '<tr class="container-qty">';
+        $html .= ' <td class="dynamic">1</td>';
+        $html .=  '<td><input type="text" name="name[]" value="' . $data["projects_title"] . '"></td>';
+        $html .=  ' <td><input type="text" name="qty[]" value ="1" class="qty"></td>';
+        $html .=  ' <td><input type="text" name="mrp[]" placeholder="MRP"></td>';
+        $html .=  '<td><input type="text" name="discount[]" placeholder="Discount"></td>';
+        $html .=  '<td><button type="button" class="cart-qty-plus">+</button></td>';
+        $html .=  '<td><button type="button" class="cart-qty-minus">-</button></td>';
+        $html .=  '<td><span class="recyclebin"><i class="fas fa-trash-alt"></i></span></td>';
+        $html .=  ' </tr>';
 
         $result['html'] = $html;
         echo json_encode($result);
+    }
+    public function csvExport()
+    {
+        $this->load->dbutil();
+        $this->load->helper('download');
+        $fname = "orders-" . time();
+        $report_name = "$fname.csv";
+        $report_path = $this->config->item('CSV_PATH');
+        $fileName = $report_path . $report_name;
+        $fileWrite = fopen($fileName, 'w');
+        $array_data = $_POST['name'];
+        $header = array_keys($_POST);
+        fputcsv($fileWrite, $header);
+        $array_new = array();
+        foreach ($header as $name) {
+            foreach ($_POST[$name] as $key => $line) {
+                $array_new[$key][$name] = $_POST[$name][$key];
+            }
+        }
+        foreach ($array_new as $new_line) {
+            fputcsv($fileWrite, $new_line);
+        }
+        fclose($fileWrite);
+        $file_download = $this->config->item('CSV_URL') . $report_name;
+        if ($file_download == '') {
+            echo 'no-data';
+        } else {
+            echo json_encode(array('report_file' => $file_download));
+        }
+        exit;
     }
 }

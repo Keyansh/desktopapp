@@ -4,9 +4,10 @@ body {
 }
 
 .form-content {
-    background-color: #d5d5d5;
+    background-color: #f7f5f6;
     display: flex;
     flex-wrap: wrap;
+    -webkit-box-shadow: -1px 3px 14px -1px rgba(0, 0, 0, 0.15);
 }
 
 .form-table {
@@ -31,9 +32,9 @@ body {
 }
 
 .form-row2 .list .list-items {
-	padding-bottom: 10px;
-	font-weight: 500;
-	cursor: pointer;
+    padding-bottom: 10px;
+    font-weight: 500;
+    cursor: pointer;
 }
 
 .form-row3 {
@@ -46,11 +47,21 @@ body {
     font-weight: 500;
 }
 
-.form-row3 .btn1 button[type="button"] {
+.form-row3 .btn1 button {
     padding: 5px 15px;
     width: 100%;
-    background-color: #04aa6d;
+    background-color: #2d4779;
     border: none;
+    border-radius: 7px;
+    color: white;
+    transition: 0.2s;
+    border: 1px solid #2d4779;
+}
+
+.form-row3 .btn1 button.active,
+.form-row3 .btn1 button:hover {
+    background-color: white;
+    color: #2d4779;
 }
 
 .form-table thead tr th {
@@ -60,12 +71,12 @@ body {
     white-space: nowrap;
 }
 
-.form-table tbody tr td button[type="button"] {
+.form-table tbody tr td button {
     padding: 0 10px;
     font-size: 20px;
     font-weight: 700;
-    background-color: #04aa6d;
-    border: 1px solid #04aa6d;
+    background-color: #2d4779;
+    border: 1px solid #2d4779;
 }
 
 .recyclebin .fas {
@@ -83,7 +94,7 @@ body {
 
 .form-row2,
 .form-row3 {
-    border-left: 1px solid #b5b5b5;
+    border-left: 1px solid #dfdfdf;
 }
 
 .items {
@@ -91,4 +102,5 @@ body {
     font-weight: bold;
     padding-top: 21px;
     text-align: center;
+    border-bottom: 1px solid #dfdfdf;
 }
