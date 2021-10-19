@@ -119,7 +119,8 @@
                 type: 'POST',
                 data: formData,
                 success: function(data) {
-
+                    alert('Csv created');
+                    location.reload();
                 }
             });
         });
