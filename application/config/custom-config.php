@@ -99,6 +99,8 @@ $config['PDF_PATH'] = $config['UPLOAD_PATH'] . 'pdf/';
 $config['PDF_URL'] = $config['UPLOAD_URL'] . 'pdf/';
 $config['CSV_PATH'] = $config['UPLOAD_PATH'] . 'csv/';
 $config['CSV_URL'] = $config['UPLOAD_URL'] . 'csv/';
+$config['CSV_TAKEAWAY_PATH'] = $config['CSV_PATH'] . 'takeaway/';
+$config['CSV_TAKEAWAY_URL'] = $config['CSV_URL'] . 'takeaway/';
 
 $config['BROCHURES_PATH'] = $config['UPLOAD_PATH'] . 'brochures/';
 $config['BROCHURES_URL'] = $config['UPLOAD_URL'] . 'brochures/';

@@ -918,6 +918,7 @@ class Cms extends Cms_Controller
         $html .=  ' <td><input type="text" name="qty[]" value ="1" class="qty"></td>';
         $html .=  ' <td><input type="text" name="mrp[]" placeholder="MRP"></td>';
         $html .=  '<td><input type="text" name="discount[]" placeholder="Discount"></td>';
+        $html .=  '<td><select name="type[]"><option value="dinning">Dinning</option><option value="takeaway">Takeaway</option></select></td>';
         $html .=  '<td><button type="button" class="cart-qty-plus">+</button></td>';
         $html .=  '<td><button type="button" class="cart-qty-minus">-</button></td>';
         $html .=  '<td><span class="recyclebin"><i class="fas fa-trash-alt"></i></span></td>';
@@ -935,7 +936,6 @@ class Cms extends Cms_Controller
         $report_path = $this->config->item('CSV_PATH');
         $fileName = $report_path . $report_name;
         $fileWrite = fopen($fileName, 'w');
-        $array_data = $_POST['name'];
         $header = array_keys($_POST);
         fputcsv($fileWrite, $header);
         $array_new = array();
@@ -948,6 +948,18 @@ class Cms extends Cms_Controller
             fputcsv($fileWrite, $new_line);
         }
         fclose($fileWrite);
+        // carry
+        $report_path_new = $this->config->item('CSV_TAKEAWAY_PATH');
+        $fileNameNew = $report_path_new . $report_name;
+        $fileWrite1 = fopen($fileNameNew, 'w');
+        fputcsv($fileWrite1, $header);
+        foreach ($array_new as $new_line) {
+            if ($new_line['type'] == "takeaway") {
+                fputcsv($fileWrite1, $new_line);
+            }
+        }
+        fclose($fileWrite1);
+        // close
         $file_download = $this->config->item('CSV_URL') . $report_name;
         if ($file_download == '') {
             echo 'no-data';

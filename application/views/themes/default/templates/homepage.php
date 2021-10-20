@@ -39,6 +39,7 @@
                                     <th scope="col">Qty</th>
                                     <th scope="col">MRP</th>
                                     <th scope="col">Discount</th>
+                                    <th scope="col">Type</th>
                                     <th scope="col" colspan="3"></th>
                                 </tr>
                             </thead>
@@ -119,8 +120,8 @@
                 type: 'POST',
                 data: formData,
                 success: function(data) {
-                    alert('Csv created');
-                    location.reload();
+                    // alert('Csv created');
+                    // location.reload();
                 }
             });
         });
