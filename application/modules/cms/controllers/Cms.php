@@ -929,8 +929,6 @@ class Cms extends Cms_Controller
     }
     public function csvExport()
     {
-        $this->load->dbutil();
-        $this->load->helper('download');
         $fname = "orders-" . time();
         $report_name = "$fname.csv";
         $report_path = $this->config->item('CSV_PATH');
