@@ -51,6 +51,7 @@
                         </table>
                         <button type="submit" class="btn btn-default-nk">submit</button>
                     </form>
+                    <span id="nettoalofdw"></span>
                 </div>
                 <div class="col-6 col-md-2 form-row2">
                     <p class="items">Items</p>
@@ -140,6 +141,56 @@
             if (amount > 1) {
                 $n.val(amount - 1);
             }
+        });
+
+
+
+
+
+
+        $(document).on('blur', '.qty', function() {
+
+
+            var qty = $(this).val();
+            console.log(qty);
+            var mrp = $(this).parents('.container-qty').find('.mrp').val();
+
+
+            var rowTotle = qty * mrp;
+            console.log(rowTotle);
+            var discount = $(this).parents('.container-qty').find('.discount').val(rowTotle);
+            var total = 0;
+            $('.discount').each(function() {
+                total += parseFloat($(this).val()) || 0;
+            });
+             $('#nettoalofdw').html(total);
+
+            // var total = 0;
+            // var totalfinal = 0;
+            // var totalfinalnpo = 0;
+            // var cname = $(this).attr('class').split(' ')[1];
+            // var refcname = $('.ref-' + cname).val();
+
+            // $('.' + cname).each(function() {
+            //     total += parseFloat($(this).val()) || 0;
+            // });
+
+            //console.log( refcname );
+
+
+            // $('#nettoalofdw').html(totalfinal);
+            // $('#nettoalofdwnpo').html(totalfinalnpo);
+        });
+        $(document).on('blur', '.mrp', function() {
+            var mrp = $(this).val();
+            var qty = $(this).parents('.container-qty').find('.qty').val();
+            var rowTotle = qty * mrp;
+            var discount = $(this).parents('.container-qty').find('.discount').val(rowTotle);
+            var total = 0;
+            $('.discount').each(function() {
+                total += parseFloat($(this).val()) || 0;
+            });
+             $('#nettoalofdw').html(total);
         });
     </script>
 

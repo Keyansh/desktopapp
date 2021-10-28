@@ -915,9 +915,9 @@ class Cms extends Cms_Controller
         $html .=  '<tr class="container-qty">';
         $html .= ' <td class="dynamic">1</td>';
         $html .=  '<td><input type="text" name="name[]" value="' . $data["projects_title"] . '"></td>';
-        $html .=  ' <td><input type="text" name="qty[]" value ="1" class="qty"></td>';
-        $html .=  ' <td><input type="text" name="mrp[]" placeholder="MRP"></td>';
-        $html .=  '<td><input type="text" name="discount[]" placeholder="Discount"></td>';
+        $html .=  ' <td><input type="text" class="qty" name="qty[]" value ="1" class="qty"></td>';
+        $html .=  ' <td><input type="text" class="mrp" name="mrp[]" value="0" placeholder="MRP"></td>';
+        $html .=  '<td><input type="text" class="discount" name="discount[]" value="0" placeholder="Discount"></td>';
         $html .=  '<td><select name="type[]"><option value="dinning">Dinning</option><option value="takeaway">Takeaway</option></select></td>';
         $html .=  '<td><button type="button" class="cart-qty-plus">+</button></td>';
         $html .=  '<td><button type="button" class="cart-qty-minus">-</button></td>';
