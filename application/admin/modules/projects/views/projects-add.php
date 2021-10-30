@@ -63,8 +63,8 @@
     }
 </style>
 <h3 class="title-hero clearfix">
-    Add Projects
-    <a href="projects" class="pull-right btn btn-primary">Manage Projects</a>
+    Add Products
+    <a href="projects" class="pull-right btn btn-primary">Manage Products</a>
 </h3>
 <div class="panel">
     <div class="panel-body">
@@ -99,7 +99,7 @@
                             </div>
                         </div> -->
                         <div class="form-group clearfix">
-                            <label class="col-sm-2 control-label">Project Type</label>
+                            <label class="col-sm-2 control-label">Category <span class="error">*</span></label>
                             <div class="col-sm-6">
                                 <select name="project_cat" id="" class="form-control">
                                     <option value="">--select--</option>

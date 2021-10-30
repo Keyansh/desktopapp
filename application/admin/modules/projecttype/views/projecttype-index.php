@@ -18,8 +18,8 @@
     });
 </script>
 <h3 class="title-hero clearfix">
-    Manage Project Type
-    <a href="projecttype/add/" class="pull-right btn btn-primary">Add Project Type</a>
+    Manage Category
+    <a href="projecttype/add/" class="pull-right btn btn-primary">Add Category</a>
 </h3>
 <?php
 $this->load->view('inc-messages');

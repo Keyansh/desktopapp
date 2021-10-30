@@ -83,7 +83,7 @@ class Projects extends Admin_Controller
 
         //validation check
         $this->form_validation->set_rules('title', 'Title', 'trim|required');
-        $this->form_validation->set_rules('project_cat', 'Project Type', 'trim|required');
+        $this->form_validation->set_rules('project_cat', 'Category', 'trim|required');
 
         $this->form_validation->set_error_delimiters('<li>', '</li>');
 
@@ -134,7 +134,7 @@ class Projects extends Admin_Controller
 
         //validation check
         $this->form_validation->set_rules('title', 'Title', 'trim|required');
-        $this->form_validation->set_rules('project_cat', 'Project Type', 'trim|required');
+        $this->form_validation->set_rules('project_cat', 'Category', 'trim|required');
 
         $this->form_validation->set_error_delimiters('<li>', '</li>');
         $parentcat = array();

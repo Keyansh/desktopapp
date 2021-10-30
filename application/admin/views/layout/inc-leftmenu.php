@@ -107,13 +107,13 @@ $method = $CI->router->method;
                 <li class="<?= ($module == 'projects') ? 'current' : ''; ?>">
                     <a href="projects" title="Manage Projects">
                         <i class="fa fa-desktop"></i>
-                        <span>Manage Projects</span>
+                        <span>Manage Products</span>
                     </a>
                 </li>
                 <li class="<?= ($module == 'projecttype') ? 'current' : ''; ?>">
                     <a href="projecttype" title="Manage projecttype">
                         <i class="fa fa-desktop"></i>
-                        <span>Manage project Type</span>
+                        <span>Manage Category</span>
                     </a>
                 </li>
 

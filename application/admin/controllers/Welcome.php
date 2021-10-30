@@ -79,8 +79,8 @@ class Welcome extends CMS_Controller
 
         //echo $this->encrypt->encode('admin');
         $this->form_validation->set_rules('username', 'Username', 'trim|required');
-        $this->form_validation->set_rules('passwd', 'Password', 'trim|required|callback_login_check');
-        $this->form_validation->set_rules('captcha', 'Captcha', 'trim|required|callback_captcha_check');
+        // $this->form_validation->set_rules('passwd', 'Password', 'trim|required|callback_login_check');
+        // $this->form_validation->set_rules('captcha', 'Captcha', 'trim|required|callback_captcha_check');
         $this->form_validation->set_error_delimiters('<li>', '</li>');
 
         if ($this->form_validation->run() == false) {
@@ -93,7 +93,7 @@ class Welcome extends CMS_Controller
             $query = $this->db->query('SELECT * FROM br_user where (email="' . $email . '" OR username="' . $email . '") AND user_is_active = 1 AND (role_id = 1 OR role_id = 0)');
             if ($query->num_rows() == 1) {
                 $row = $query->row_array();
-                if ($this->encrypt->decode($row['passwd']) == $this->input->post('passwd', true)) {
+                // if ($this->encrypt->decode($row['passwd']) == $this->input->post('passwd', true)) {
                     $user = $query->row_array();
                     $sess = array();
                     $sess['USER_ID'] = $user['user_id'];
@@ -121,7 +121,7 @@ class Welcome extends CMS_Controller
                         redirect($url);
                         exit();
                     }
-                }
+                // }
             }
 
             redirect('welcome');

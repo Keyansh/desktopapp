@@ -17,8 +17,8 @@
     });
 </script>
 <h3 class="title-hero clearfix">
-    Manage projects
-    <a href="projects/add" class="pull-right btn btn-primary">Add projects</a>
+    Manage Products
+    <a href="projects/add" class="pull-right btn btn-primary">Add Products</a>
 </h3>
 <?php
 $this->load->view('inc-messages');
@@ -38,7 +38,7 @@ if (count($projects) == 0) {
     <thead>
         <tr>
             <th width="10%">#</th>
-            <th>projects Title</th>
+            <th>Products Title</th>
             <th width="20%">Actions</th>
         </tr>
     </thead>
@@ -70,7 +70,7 @@ if (count($projects) == 0) {
     <tfoot>
         <tr>
             <th>#</th>
-            <th>projects Title</th>
+            <th>Products Title</th>
             <th>Actions</th>
         </tr>
     </tfoot>

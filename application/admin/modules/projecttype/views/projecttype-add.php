@@ -1,6 +1,6 @@
 <h3 class="title-hero clearfix">
-    Add Project Type
-    <a href="projecttype/" class="pull-right btn btn-primary">Manage Project Type</a>
+    Add Category
+    <a href="projecttype/" class="pull-right btn btn-primary">Manage Category</a>
 </h3>
 <div class="panel">
     <div class="panel-body">

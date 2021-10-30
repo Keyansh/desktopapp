@@ -2,7 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 
 <head>
-    <?php $this->load->view('themes/' . THEME . '/layout/inc-analytic.php'); ?>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <?php echo cms_meta_tags(); ?>
@@ -13,13 +12,15 @@
     echo cms_head();
     echo cms_css();
     echo cms_js();
-    $this->load->view('themes/' . THEME . '/layout/inc-before-head-close.php');
     ?>
 </head>
 <style>
     #main-form {
         margin-top: 20px;
     }
+   .form-row1 {
+	padding-bottom: 40px;
+}
 </style>
 
 <body>
@@ -30,7 +31,7 @@
                     <input type="text" class="date-input" value="<?= date('d-m-Y') ?>" placeholder="">
                 </div>
                 <div class="col-xs-12 col-md-8 form-row1">
-                    <form id="main-form">
+                    <form id="mainForm" action="">
                         <table class="table form-table">
                             <thead>
                                 <tr>
@@ -49,7 +50,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <button type="submit" class="btn btn-default-nk">submit</button>
+                        <button  id="submitBtn" class="btn btn-default-nk">submit</button>
                     </form>
                 </div>
                 <div class="col-6 col-md-2 form-row2">
@@ -111,12 +112,12 @@
             $(this).parents('tr').remove();
         });
 
-        $(document).on('submit', '#main-form', function(e) {
+        $(document).on('click', '#submitBtn', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            var formData = $(this).serialize();
+            var formData = $('#mainForm').serialize();
             $.ajax({
-                url: "cms/csvExport",
+                url: "cms/insertHold",
                 type: 'POST',
                 data: formData,
                 success: function(data) {
@@ -125,6 +126,7 @@
                 }
             });
         });
+
 
         $(document).on('click', '.cart-qty-plus', function(e) {
             var $n = $(this)
