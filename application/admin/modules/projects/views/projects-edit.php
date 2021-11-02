@@ -98,13 +98,13 @@
                                 <input name="title" type="text" class="form-control" id="title" value="<?php echo set_value('title', $projects['projects_title']); ?>" size="40">
                             </div>
                         </div>
-                        <!-- <div class="form-group clearfix">
-                            <label class="col-sm-2 control-label">Architect <span class="error">*</span></label>
+                        <div class="form-group clearfix">
+                            <label class="col-sm-2 control-label">Mrp <span class="error">*</span></label>
                             <div class="col-sm-6">
-                                <input name="architect" type="text" class="form-control" id="architect" value="<?php echo set_value('architect', $projects['architect']); ?>" size="40">
+                                <input name="mrprs" type="text" class="form-control" id="mrprs" value="<?php echo set_value('mrprs', $projects['mrprs']); ?>" size="40">
                             </div>
                         </div>
-                        <div class="form-group clearfix">
+                        <!-- <div class="form-group clearfix">
                             <label class="col-sm-2 control-label">Contractor <span class="error">*</span></label>
                             <div class="col-sm-6">
                                 <input name="contractor" type="text" class="form-control" id="contractor" value="<?php echo set_value('contractor', $projects['contractor']); ?>" size="40">
@@ -141,25 +141,3 @@
 </div>
 
 
-<script>
-    $(document).ready(function() {
-        $('.fa-plus-square').click(function(e) {
-            var html = '';
-            html += '<div class="form-group clearfix">';
-            html += '<div class="col-lg-5">';
-            html += '<input name="fieldname[]" class="form-control" placeholder="Name" required/>';
-            html += '</div>';
-            html += '<div class="col-lg-5">';
-            html += '<input name="fieldvalue[]" class="form-control" placeholder="Value" required/>';
-            html += '</div>';
-            html += '<div class="col-lg-2">';
-            html += '<i class="fa fa-window-close fa-4 fielddel" style="font-size:30px;cursor:pointer" aria-hidden="true"></i>';
-            html += '</div>';
-            html += '</div>';
-            $('.fields-main-div').append(html);
-        });
-        $(document).on('click', '.fa-window-close.fielddel', function(e) {
-            $(this).parent().parent().remove();
-        });
-    });
-</script>

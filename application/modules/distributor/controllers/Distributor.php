@@ -14,6 +14,7 @@ class Distributor extends Cms_Controller
 
     public function index()
     {
+        e(123);
         $status = $this->cmscore->loadPage($this);
         if (!$status) {
             return;
@@ -24,10 +25,10 @@ class Distributor extends Cms_Controller
         $page = array();
         $page = $this->Pagemodel->getDetails($file_name);
 
-        if (!$page) {
-            $this->http->show404();
-            return;
-        }
+        // if (!$page) {
+        //     $this->http->show404();
+        //     return;
+        // }
         $pageId = $page['page_id'];
         $globalBlocks = array();
         $globalBlocks = $this->Pagemodel->getGlobalBlocks(0);
