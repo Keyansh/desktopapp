@@ -196,7 +196,7 @@
                     location.reload();
                 }
             });
-        });
+        }); 
 
         function totalfunction(){
           var  total = 0;
