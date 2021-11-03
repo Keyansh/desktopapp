@@ -56,6 +56,7 @@ class Projectsmodel extends CI_Model
         $data['project_cat'] = $this->input->post('project_cat', true);
         $data['video_link'] = $this->input->post('video_link', true);
         $data['mrprs'] = $this->input->post('mrprs', true);
+        $data['takeAway'] = $this->input->post('takeAway', true);
         $data['is_like_active'] = $this->input->post('is_like_active', true) ? $this->input->post('is_like_active', true) : 0;
         $data['homepage_active'] = $this->input->post('homepage_active', true) ? $this->input->post('homepage_active', true) : 0;
         $data['added_on'] = time();
@@ -201,6 +202,7 @@ class Projectsmodel extends CI_Model
         $data['projects_date'] = $this->input->post('date', true);
         $data['project_cat'] = $this->input->post('project_cat', true);
         $data['mrprs'] = $this->input->post('mrprs', true);
+        $data['takeAway'] = $this->input->post('takeAway', true);
         $data['video_link'] = $this->input->post('video_link', true);
         $data['is_like_active'] = $this->input->post('is_like_active', true) ? $this->input->post('is_like_active', true) : 0;
         $data['homepage_active'] = $this->input->post('homepage_active', true) ? $this->input->post('homepage_active', true) : 0;

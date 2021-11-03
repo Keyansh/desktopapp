@@ -16,4 +16,12 @@ class Downloadmodel extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
+    public function getDetails($id)
+    {
+        $this->db->select('*');
+        $this->db->where('id', $id);
+        $this->db->from('order_hold');
+        $query = $this->db->get();
+        return $query->row_array();
+    }
 }

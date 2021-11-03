@@ -98,6 +98,7 @@
                                 &nbsp;(Will be auto-generated if left blank)
                             </div>
                         </div> -->
+                       
                         <div class="form-group clearfix">
                             <label class="col-sm-2 control-label">Category <span class="error">*</span></label>
                             <div class="col-sm-6">
@@ -107,6 +108,13 @@
                                         <option value="<?= $item['id'] ?>"><?= $item['name'] ?></option>
                                     <?php } ?>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label class="col-sm-2 control-label">TakeAway</label>
+                            <div class="col-sm-6">
+                                <input type="radio" name="takeAway" value="1" <?php echo set_radio('takeAway', '1'); ?> />Yes
+                                <input type="radio" name="takeAway" value="0" <?php echo set_radio('takeAway', '0', TRUE); ?> />NO
                             </div>
                         </div>
                     </div>

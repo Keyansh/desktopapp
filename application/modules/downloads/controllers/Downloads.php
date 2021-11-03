@@ -30,14 +30,14 @@ class Downloads extends Cms_Controller
     }
     function edit($id)
     {
-
-        $getAllPdf = array();
-        $getAllPdf = $this->Downloadmodel->getAllPdf();
-
+        $getDetails = array();
+        $getDetails = $this->Downloadmodel->getDetails($id);
+        $projectsTypes = array();
+        $projectsTypes = $this->Pagemodel->projectsTypes();
         $inner = array();
-        $inner['getAllPdf'] = $getAllPdf;
-        $shell['meta_title'] = 'Downloads';
-        $shell['contents'] = $this->load->view('pdf-result', $inner, true);
+        $inner['getDetails'] = $getDetails;
+        $inner['projectsTypes'] = $projectsTypes;
+        $shell['contents'] = $this->load->view('themes/' . THEME . '/layout/inc-mainview', $inner, true);
         $this->load->view("themes/" . THEME . "/templates/default", $shell);
     }
   

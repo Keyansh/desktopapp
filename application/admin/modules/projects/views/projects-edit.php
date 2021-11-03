@@ -128,6 +128,13 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="form-group clearfix">
+                            <label class="col-sm-2 control-label">TakeAway</label>
+                            <div class="col-sm-6">
+                                <input type="radio" name="takeAway" value="1" <?php echo set_radio('takeAway', 1, ($projects['takeAway'] == 1)); ?> />Yes
+                                <input type="radio" name="takeAway" value="0" <?php echo set_radio('takeAway', 0, ($projects['takeAway'] == 0)); ?> />NO
+                            </div>
+                        </div>
 
                     </div>
                  

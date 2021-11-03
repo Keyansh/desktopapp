@@ -891,9 +891,14 @@ class Cms extends Cms_Controller
 
     public function projects()
     {
+        if($_POST['id'] == 'Takeaway'){
+        $query = $this->db->where('takeAway', 1); 
+        } else{
+            $query = $this->db->where('project_cat', $_POST['id']); 
+        }
         $result  = [];
         $this->db->where('active', 1);
-        $this->db->where('project_cat', $_POST['id']);
+        $query;
         $rs = $this->db->get('projects');
         $data = $rs->result_array();
         $result['html'] = '<p>No Data</p>';
@@ -961,7 +966,6 @@ class Cms extends Cms_Controller
 
     public function insertHold()
     {
-       
         $header = array_keys($_POST);
         $array_new = array();
         foreach ($header as $name) {

@@ -1,7 +1,6 @@
-<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>admin/css/jquery.dataTables.min.css">
-<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>admin/assets/widgets/datatable/datatable.css">
-<script type="text/javascript" src="<?= base_url(); ?>admin/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="<?= base_url(); ?>admin/assets/widgets/datatable/datatable-tabletools.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+  
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         var table = $('#example').DataTable({
@@ -38,7 +37,7 @@ if (count($getAllPdf) == 0) {
             <tr>
                 <td><?= $i ?></td>
                 <td><?= $item['order_number']; ?></td>                
-                <td width="10%"><a href="downloads/edit/<?php echo $item['order_number']; ?>"  class='tooltip-button' data-toggle='tooltip' data-placement='top' title='Edit'><i class="fa fa-edit"></i></a></td>
+                <td width="10%"><a href="downloads/edit/<?php echo $item['id']; ?>"  class='tooltip-button' data-toggle='tooltip' data-placement='top' title='Edit'><i class="fa fa-edit"></i></a></td>
             </tr>
         <?php $i++; } ?>
     </tbody>
