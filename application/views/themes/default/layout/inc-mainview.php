@@ -151,11 +151,13 @@
         $(document).on('click', '.list-items', function(e) {
             e.preventDefault();
             var id = $(this).attr('data-id');
+            var ptype = $(this).attr('data-type');
             $.ajax({
                 url: "cms/projectData",
                 type: 'POST',
                 data: {
                     id: id,
+                    ptype: ptype,
                 },
                 success: function(data) {
                     const obj = JSON.parse(data);

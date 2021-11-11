@@ -904,8 +904,13 @@ class Cms extends Cms_Controller
         $result['html'] = '<p>No Data</p>';
         if ($data) {
             $html = '';
+            if($_POST['id'] == 'Takeaway'){
+                $type = 'takeaway'; 
+                } else{
+                    $type = 'dinning'; 
+                }
             foreach ($data as $item) {
-                $html .= '<li class="list-items" data-id=' . $item['projects_id'] . '>' . $item['projects_title'] . '</li>';
+                $html .= '<li class="list-items" data-type="'. $type .'" data-id=' . $item['projects_id'] . '>' . $item['projects_title'] . '</li>';
             }
             $result['html'] = $html;
         }
@@ -919,7 +924,7 @@ class Cms extends Cms_Controller
         $html = '';
         $html .=  '<tr class="container-qty">';
         $html .= ' <td class="dynamic">1</td>';
-        $html .=  '<td><input type="text" name="name[]" value="' . $data["projects_title"] . '" readonly></td>';
+        $html .=  '<td><input type="text" name="name[]" value="' . $data["projects_title"] . '" readonly><input type="hidden" name="type[]" value="' . $_POST['ptype'] . '"></td>';
         $html .=  ' <td><input type="text" class="qty" name="qty[]" value ="1" class="qty"></td>';
         $html .=  ' <td><input type="text" class="mrp" name="mrp[]" value="' . $data["mrprs"] . '" placeholder="MRP"></td>';
         $html .=  '<td><input type="text" class="discount" name="discount[]" value="0" placeholder="Discount"></td>';
@@ -951,10 +956,24 @@ class Cms extends Cms_Controller
                 $array_new[$key][$name] = $_POST[$name][$key];
             }
         }
+        
         foreach ($array_new as $new_line) {
             fputcsv($fileWrite, $new_line);
         }
         fclose($fileWrite);
+
+        $report_path_new = $this->config->item('CSV_TAKEAWAY_PATH');
+        $fileNameNew = $report_path_new . $report_name;
+        $fileWrite1 = fopen($fileNameNew, 'w');
+        fputcsv($fileWrite1, $header);
+        foreach ($array_new as $new_line) {
+            if ($new_line['type'] == "takeaway") {
+                fputcsv($fileWrite1, $new_line);
+            }
+        }
+        fclose($fileWrite1);
+
+
         $file_download = $this->config->item('CSV_URL') . $report_name;
         if ($file_download == '') {
             echo 'no-data';
